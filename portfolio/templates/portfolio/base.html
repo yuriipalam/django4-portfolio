@@ -1,0 +1,54 @@
+{% spaceless %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ global_preferences.general__title }}</title>
+    <meta name="description" content="{{ global_preferences.general__meta_description }}">
+    <link rel="stylesheet" href="{% static 'portfolio/style.css' %}">
+</head>
+<body>
+    <!-- header block -->
+    <div class="header" id="header">
+        <a href="{% url 'index' %}" style="display: flex;"><img class="logo" src="{% static 'portfolio/logo.gif' %}" alt="logo"></a>
+        <nav class="navbar">
+            <ul class="nav__links">
+                <li><a class="a__header" href="{{ global_preferences.general__linkedin_link }}" target="_blank">LinkedIn</a></li>
+                <li><a class="a__header" href="{{ global_preferences.general__freelancer_link }}" target="_blank">Freelancer</a></li>
+                <li><a class="a__header" href="{{ global_preferences.general__github_link }}" target="_blank">GitHub</a></li>
+                <li><a class="a__header" href="{{ resume_url }}" target="_blank">Resume</a></li>
+                <li class="nav__extra-link"><a href="#" style="text-decoration: none;"><button data-modal-target="#modal" type="button" class="header__button__li">Contact</button></a></li>
+            </ul>
+        </nav>
+        <a href="#"><button data-modal-target="#modal" type="button" class="header__button">Contact</button></a>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+    {% block content %}{% endblock content %}
+    <!-- footer -->
+    <div class="footer">
+        <p class="footer__text">Yurii Palamarchuk © 2022</p>
+    </div>
+</body>
+
+<!-- modal -->
+<div class="modal" id="modal">
+    <button data-close-button class="modal__close-button">&times;</button>
+    <div class="modal__body">
+        <div class="modal__content">
+            <div class="modal__text__line"><img src="{% static 'portfolio/telegram-icon.svg' %}" alt="Telegram" height="28px"><p class="modal__text">Telegram: <a class="modal__link" href="https://t.me/groshvrukave">@groshvrukave</a></p></div>
+            <div class="modal__text__line"><img src="{% static 'portfolio/gmail-icon.svg' %}" alt="Gmail" height="28px"><p class="modal__text">Email: <a class="modal__link" href="mailto:yurapalamarchuk111@gmail.com">yurapalamarchuk111@gmail.com</a></p></div>
+        </div>
+    </div>
+</div>
+<div id="overlay"></div>
+
+<script src="{% static 'portfolio/main.js' %}"></script>
+</html>
+{% endspaceless %}
