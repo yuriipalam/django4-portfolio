@@ -25,3 +25,7 @@ def introduction_admin(request):
     except Introduction.DoesNotExist:
         return redirect(urljoin(request.get_full_path(), "add"))
     return redirect(urljoin(request.get_full_path(), f"{introduction_object.id}/change"))
+
+
+def handler404(request, exception=None):
+    return redirect('index')

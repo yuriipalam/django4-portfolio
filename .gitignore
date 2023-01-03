@@ -3,3 +3,4 @@ __pycache__/
 *.pot
 mediafiles/
 db.sqlite3
+.env

@@ -4,6 +4,8 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from portfolio.views import introduction_admin
 
+handler404 = 'portfolio.views.handler404'
+
 urlpatterns = [
     path('', include('portfolio.urls')),
     path('admin/portfolio/introduction/', view=introduction_admin),
