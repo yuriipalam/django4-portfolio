@@ -16,13 +16,12 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    '0.0.0.0',
+    '51.195.151.88',
     '.yuriipalamarchuk.com'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'http://127.0.0.1',
-    'http://0.0.0.0',
+    'http://51.195.151.88',
     'http://yuriipalamarchuk.com'
 ]
 
