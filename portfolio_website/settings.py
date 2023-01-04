@@ -21,8 +21,7 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'http://51.195.151.88',
-    'http://yuriipalamarchuk.com'
+    'https://yuriipalamarchuk.com'
 ]
 
 
