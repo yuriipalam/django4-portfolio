@@ -6,7 +6,7 @@ from django.http import Http404
 
 def index(request):
     context = {
-        'projects': Project.objects.all(),
+        'projects': Project.objects.all().order_by('-id'),
         'empty_block': False,
     }
     try:
