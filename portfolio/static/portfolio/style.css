@@ -90,11 +90,11 @@ li, .a__header, button {
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 .header__button:hover, .header__button__li:hover {
-    background-color: rgb(8, 96, 227);
+    background-color: #0e6df1;
 }
 
 .hamburger {
