@@ -80,13 +80,13 @@ li, .a__header, button {
 }
 
 .nav__links li a:hover {
-    color: #0d6efd;
+    color: #0d8dfd;
 }
 
 .header__button, .header__button__li {
     color: white;
     padding: 9px 25px;
-    background-color: rgb(13, 110, 253);
+    background-color: #0d8dfd;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -292,7 +292,7 @@ hr {
 }
 
 .project__link__title:hover {
-    color: #0d91fd;
+    color: #0d8dfd;
 }
 
 .project__description {
@@ -400,7 +400,7 @@ hr {
 }
 
 .modal__link:hover {
-    color: #0d6efd;
+    color: #0d8dfd;
 }
 
 #overlay {
