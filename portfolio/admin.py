@@ -18,9 +18,9 @@ class ProjectForm(forms.ModelForm):
             raise forms.ValidationError("No image!")
         else:
             w, h = get_image_dimensions(preview)
-            # if w != 528 and h != 326:
-                # raise forms.ValidationError(
-                    # "The image size supposed to be 528x326")
+            if w < 700:
+                raise forms.ValidationError(
+                    "The image width supposed to be greater than 700")
         return preview
 
 
