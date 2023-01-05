@@ -21,8 +21,8 @@
             <div class="projects__row">
                 {% for project in projects %}
                 <div class="project">
-                    <a class="project__link__image" href="{{ project.link }}"><img class="project__image" src="{{ project.preview.url }}" alt="{{ project.title }}"></a>
-                    <div style="display: flex; align-items: flex-end;">{% if project.github %}<a href="{{ project.github }}" style="display: flex;"><img src="{% static 'portfolio/github-icon.svg' %}" alt="Github" height="26px" class="project__github-icon"></a>{% endif %}<a class="project__link__title" href="{{ project.link }}" target="_blank"{% if project.github %} style="margin-left: 3px;"{% endif %}>{{ project.title }}</a></div>
+                    <a class="project__link__image" href="{{ project.link }}" target="_blank"><img class="project__image" src="{{ project.preview.url }}" alt="{{ project.title }}"></a>
+                    <div style="display: flex; align-items: flex-end;">{% if project.github %}<a href="{{ project.github }}" style="display: flex;" target="_blank"><img src="{% static 'portfolio/github-icon.svg' %}" alt="Github" height="26px" class="project__github-icon"></a>{% endif %}<a class="project__link__title" href="{{ project.link }}" target="_blank"{% if project.github %} style="margin-left: 3px;"{% endif %}>{{ project.title }}</a></div>
                     <p class="project__description">{{ project.description }}</p>
                 </div>
                 {% endfor %}
