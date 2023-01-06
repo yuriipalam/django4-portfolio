@@ -127,6 +127,13 @@ li, .a__header, button {
     }
 }
 
+@media(max-width: 1040px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
 @media(max-width: 980px) {
     .header {
         padding: 5px 3%;
