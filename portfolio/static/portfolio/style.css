@@ -446,4 +446,8 @@ hr {
     .modal__body {
         padding: 30px 15px;
     }
+    .modal .modal__close-button {
+        right: 8px;
+        top: 5px;
+    }
 }
