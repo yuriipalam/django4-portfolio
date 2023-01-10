@@ -147,7 +147,7 @@ li, .a__header, button {
 
 @media(max-width: 768px) {
     .header {
-        padding: 15px 5%;
+        padding: 15px 3%;
     }
     .header.active {
         filter: drop-shadow(0px -5px 6px rgba(22, 22, 22, 0.8));
@@ -200,6 +200,18 @@ li, .a__header, button {
 
     .nav__links.active {
         left: 0;
+    }
+}
+
+@media(max-width: 600px) {
+    .header {
+        padding: 15px 4%;
+    }
+}
+
+@media(max-width: 500px) {
+    .header {
+        padding: 15px 5%;
     }
 }
 
