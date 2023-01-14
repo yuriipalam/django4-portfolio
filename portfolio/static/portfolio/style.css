@@ -291,6 +291,14 @@ hr {
     max-width: 100%;
 }
 
+.project__image {
+    transition: opacity 400ms ease;
+}
+
+.project__image:hover {
+    opacity: 0.7;
+}
+
 .project__github-icon {
     transition: opacity 400ms ease;
 }
