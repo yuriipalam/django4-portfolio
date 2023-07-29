@@ -50,23 +50,23 @@ function closeModal(modal) {
     overlay.classList.remove('active')
 }
 
-// header
+// navbar
 
-let header = document.querySelector("#header")
+let navbar = document.querySelector("#navbar")
 
 document.addEventListener('scroll', (e) => {
     if (window.scrollY > 0) {
-        header.classList.add('active')
+        navbar.classList.add('active')
     }
     else {
-        header.classList.remove('active')
+        navbar.classList.remove('active')
     }
 })
 
 let hamburger = document.querySelector(".hamburger")
-let nav__links = document.querySelector(".nav__links")
+let navItems = document.querySelector(".nav-items")
 
 hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active")
-    nav__links.classList.toggle("active")
+    navItems.classList.toggle("active")
 })

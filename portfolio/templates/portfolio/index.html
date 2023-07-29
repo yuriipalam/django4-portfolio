@@ -1,36 +1,44 @@
 {% extends 'portfolio/base.html' %}
 {% load static %}
 {% block content %}
-    <!-- introduction block -->
-    <div class="introduction">
-        <div class="container" style="display: flex; flex-direction: column;">
-            <img class="introduction__photo" src="{{ intro_object.picture.url }}" alt="Photo of Yurii Palamarchuk">
-            <h1 class="introduction__header">{{ intro_object.title }}</h1>
-            <span class="introduction__text">
-                {{ intro_object.description|safe }}
-            </span>
-        </div>
-    </div>
-
-    {% if projects %}
-    <!-- projects block -->
-    <div class="projects">
+    <main>
         <div class="container">
-            <h2 class="projects__header">Projects</h2>
-            <hr>
-            <div class="projects__row">
-                {% for project in projects %}
-                <div class="project">
-                    <a class="project__link__image" href="{{ project.link }}" target="_blank"><img class="project__image" src="{{ project.preview.url }}" alt="{{ project.title }}"></a>
-                    <div style="display: flex; align-items: flex-end;">{% if project.github %}<a href="{{ project.github }}" style="display: flex;" target="_blank"><img src="{% static 'portfolio/github-icon.svg' %}" alt="Github" height="26px" class="project__github-icon"></a>{% endif %}<a class="project__link__title" href="{{ project.link }}" target="_blank"{% if project.github %} style="margin-left: 3px;"{% endif %}>{{ project.title }}</a></div>
-                    <p class="project__description">{{ project.description }}</p>
-                </div>
-                {% endfor %}
-                {% if empty_block %}
-                <div class="project empty_block"></div>
-                {% endif %}
+            <div class="introduction">
+                <img class="introduction__photo" src="{{ intro_object.picture.url }}" alt="Photo of Yurii Palamarchuk">
+                <h1 class="introduction__header">{{ intro_object.title }}</h1>
+                <span class="introduction__text">
+                {{ intro_object.description|safe }}
+                </span>
             </div>
+
+            {% if projects %}
+                <div class="projects">
+                    <h2 class="projects__header">Projects</h2>
+                    <hr>
+                    <div class="projects__row">
+                        {% for project in projects %}
+                            <div class="project">
+                                <a class="project__link__image" href="{{ project.link }}" target="_blank"><img
+                                        class="project__image" src="{{ project.preview.url }}"
+                                        alt="{{ project.title }}"></a>
+                                <div style="display: flex; align-items: flex-end;">{% if project.github %}
+                                    <a href="{{ project.github }}" style="display: flex;" target="_blank"><img
+                                            src="{% static 'portfolio/github-icon.svg' %}" alt="Github" height="26px"
+                                            class="project__github-icon"></a>{% endif %}<a class="project__link__title"
+                                                                                           href="{{ project.link }}"
+                                                                                           target="_blank"
+                                        {% if project.github %}
+                                                                                           style="margin-left: 3px;"{% endif %}>{{ project.title }}</a>
+                                </div>
+                                <p class="project__description">{{ project.description }}</p>
+                            </div>
+                        {% endfor %}
+                        {% if empty_block %}
+                            <div class="project empty_block"></div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
         </div>
-    </div>
-    {% endif %}
+    </main>
 {% endblock content %}
