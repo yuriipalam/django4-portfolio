@@ -1,5 +1,4 @@
-// Modal Window
-
+// pop up
 let openModalButtons = document.querySelectorAll('[data-modal-target]')
 let closeModalButtons = document.querySelectorAll('[data-close-button]')
 let overlay = document.getElementById('overlay')
@@ -51,7 +50,7 @@ function closeModal(modal) {
     overlay.classList.remove('active')
 }
 
-// Header
+// header
 
 let header = document.querySelector("#header")
 

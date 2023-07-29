@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+    --blakish: #1b1b1b;
+    --blue: #0d8dfd;
+}
+
 .container {
     margin: auto;
     max-width: 980px;
@@ -10,7 +15,7 @@ body {
 }
 
 h1 {
-    font-weight: 600;
+    font-weight: 500;
     font-family: "Montserrat", sans-serif;
     font-size: 28px;
 }
@@ -37,7 +42,7 @@ li, .a__header, button {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
-    color: #1b1b1b;
+    color: var(--blakish);
     text-decoration: none;
 }
 
@@ -80,13 +85,13 @@ li, .a__header, button {
 }
 
 .nav__links li a:hover {
-    color: #0d8dfd;
+    color: var(--blue);
 }
 
 .header__button, .header__button__li {
     color: white;
     padding: 9px 25px;
-    background-color: #0d8dfd;
+    background-color: var(--blue);
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -235,7 +240,7 @@ li, .a__header, button {
     filter: drop-shadow(0px 9px 5px rgba(0, 0, 0, 0.3));
 }
 
-.introduction__text, pre {
+.introduction__text {
     align-self: center;
     max-width: 700px;
     margin-top: 0;
@@ -319,7 +324,7 @@ hr {
 }
 
 .project__link__title:hover {
-    color: #0d8dfd;
+    color: var(--blue);
 }
 
 .project__description {
@@ -349,7 +354,7 @@ hr {
 
 .footer {
     margin-top: 20px;
-    background-color: #1b1b1b;
+    background-color: var(--blakish);
 }
 
 .footer__text {
@@ -399,12 +404,12 @@ hr {
 }
 
 .modal .modal__close-button:hover {
-    color: rgb(0, 0, 0);
+    color: black;
 }
 
 .modal__content {
     flex-direction: column;
-    margin: 0px 0 0px 0px;
+    margin: 0;
     justify-content: center;
     height: 100%;
 }
@@ -417,7 +422,7 @@ hr {
 
 .modal__text {
     text-align: left;
-    margin: 5px 0px 5px 5px;
+    margin: 5px 0 5px 5px;
 }
 
 .modal__link {
@@ -427,7 +432,7 @@ hr {
 }
 
 .modal__link:hover {
-    color: #0d8dfd;
+    color: var(--blue);
 }
 
 #overlay {
