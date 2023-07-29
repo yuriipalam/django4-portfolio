@@ -1,9 +1,49 @@
 # Portfolio Website
 
-The application presents user's portfolio with two blocks: Introduction and Projects. User can present information about himself with uploading a picture, adding social media links, contacts and resume. Then, publish his projects with a preview, description, demo and github links. Also, it is possible to edit the title tag and other tags of the head block in the admin panel.
+#### Get your self a portfolio 🎨
 
+Clone the repo
+```
+git clone https://github.com/yuriipalam/django4-portfolio.git
+```
+
+Install dependencies
+```
+pip install -r requirements.txt
+```
+
+Do migration
+```
+python3 manage.py migrate
+```
+
+Create your admin account
+
+```
+python3 manage.py createsuper
+```
+
+Run Django app
+```
+python3 manage.py runserver
+```
+
+Add your information in the admin panel
+```
+http://127.0.0.1:8000/admin
+```
+
+You can
+- Add your social media
+- Add profile picture
+- Describe who and what you are
+- Add your projects with pictures
+
+Built with
 - Django 4
-- SQLite3
-- Fully Responsive (Bare HTML, CSS and JS)
+- SQLite
+- Fully Responsive (HTML/CSS/JS)
 
-### Try it: https://yuriipalamarchuk.com/
+Enjoy! 😎 and...
+
+#### Check it out: https://yuriipalamarchuk.com/
