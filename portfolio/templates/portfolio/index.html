@@ -1,5 +1,8 @@
 {% extends 'portfolio/base.html' %}
 {% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
+{% endblock %}
 {% block content %}
     <main>
         <div class="container">
@@ -23,7 +26,7 @@
                                         alt="{{ project.title }}"></a>
                                 <div style="display: flex; align-items: flex-end;">{% if project.github %}
                                     <a href="{{ project.github }}" style="display: flex;" target="_blank"><img
-                                            src="{% static 'portfolio/github-icon.svg' %}" alt="Github" height="26px"
+                                            src="{% static 'portfolio/assets/github-icon.svg' %}" alt="Github" height="26px"
                                             class="project__github-icon"></a>{% endif %}<a class="project__link__title"
                                                                                            href="{{ project.link }}"
                                                                                            target="_blank"

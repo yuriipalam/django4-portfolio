@@ -1,7 +1,7 @@
 // pop up
 let openModalButtons = document.querySelectorAll('[data-modal-target]')
 let closeModalButtons = document.querySelectorAll('[data-close-button]')
-let overlay = document.getElementById('overlay')
+let overlay = document.querySelector('#overlay')
 
 openModalButtons.forEach(button => {
     button.addEventListener('click', (event) => {

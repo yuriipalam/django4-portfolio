@@ -1,68 +1,69 @@
-{% spaceless %}
-    {% load static %}
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{ global_preferences.general__title }}</title>
-        <link rel="icon" href="{% static 'portfolio/favicon.ico' %}">
-        <meta name="description" content="{{ global_preferences.general__meta_description }}">
-        <link rel="stylesheet" href="{% static 'portfolio/style.css' %}">
-    </head>
-    <body>
-    <nav class="navbar" id="navbar">
-        <a href="{% url 'index' %}"><img class="navbar-logo" src="{% static 'portfolio/logo.gif' %}"
-                                         alt="Yurii Palamarchuk Logo"></a>
-        <ul class="nav-items">
-            <li class="nav-item"><a class="nav-link" href="{{ global_preferences.general__linkedin_link }}"
-                                    target="_blank">LinkedIn</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ global_preferences.general__github_link }}"
-                                    target="_blank">GitHub</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ resume_url }}" target="_blank">Resume</a></li>
-            <li class="nav-item">
-                <button class="nav-button" data-modal-target="#modal" type="button">Contact</button>
-            </li>
-        </ul>
-        <button class="nav-button" data-modal-target="#modal" type="button">Contact</button>
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-    </nav>
-    {#        <button data-modal-target="#modal" type="button" class="nav-button">Contact</button>#}
-
-    {% block content %}{% endblock content %}
-    <!-- footer -->
-    <div class="footer">
-        <p class="footer__text">Yurii Palamarchuk © 2022</p>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ global_preferences.general__title }}</title>
+    <link rel="icon" href="{% static 'portfolio/assets/favicon.ico' %}">
+    <meta name="description" content="{{ global_preferences.general__meta_description }}">
+    <link rel="stylesheet" href="{% static 'portfolio/css/base.css' %}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+<nav class="navbar" id="navbar">
+    <a href="{% url 'index' %}"><img class="navbar-logo" src="{% static 'portfolio/assets/logo.gif' %}"
+                                     alt="Yurii Palamarchuk Logo"></a>
+    <ul class="nav-items">
+        <li class="nav-item"><a class="nav-link" href="{{ global_preferences.general__linkedin_link }}"
+                                target="_blank">LinkedIn</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ global_preferences.general__github_link }}"
+                                target="_blank">GitHub</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ resume_url }}" target="_blank">Resume</a></li>
+        <li class="nav-item">
+            <button class="nav-button" data-modal-target="#modal" type="button">Contact</button>
+        </li>
+    </ul>
+    <button class="nav-button" data-modal-target="#modal" type="button">Contact</button>
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
     </div>
-    </body>
+</nav>
 
-    <!-- modal -->
-    <div class="modal" id="modal">
-        <button data-close-button class="modal__close-button">&times;</button>
-        <div class="modal__body">
-            <div class="modal__content">
-                <div class="modal__text__line"><img src="{% static 'portfolio/telegram-icon.svg' %}" alt="Telegram"
-                                                    height="28px">
-                    <p class="modal__text">Telegram: <a class="modal__link" href="https://t.me/groshvrukave">@groshvrukave</a>
-                    </p></div>
-                <div class="modal__text__line"><img src="{% static 'portfolio/whatsapp-icon.svg' %}" alt="WhatsApp"
-                                                    height="28px">
-                    <p class="modal__text">WhatsApp: <a class="modal__link" href="https://wa.me/380665958943">+38 (066)
-                        595 89 43</a></p></div>
-                <div class="modal__text__line"><img src="{% static 'portfolio/gmail-icon.svg' %}" alt="Gmail"
-                                                    height="28px">
-                    <p class="modal__text">Email: <a class="modal__link" href="mailto:yurapalamarchuk111@gmail.com">yurapalamarchuk111@gmail.com</a>
-                    </p></div>
-            </div>
+{% block content %}{% endblock content %}
+
+<!-- footer -->
+<div class="footer">
+    <p class="footer-text">Yurii Palamarchuk © 2023</p>
+</div>
+
+<!-- modal -->
+<div class="modal" id="modal">
+    <button data-close-button class="modal-close-button">&times;</button>
+    <div class="modal-body">
+        <div class="modal-content">
+            <div class="modal-item"><img src="{% static 'portfolio/assets/telegram-icon.svg' %}"
+                                         alt="Telegram"
+                                         height="28px">
+                <p class="modal-item-text">Telegram: <a class="modal-item-link"
+                                                        href="https://t.me/groshvrukave">@groshvrukave</a>
+                </p></div>
+            <div class="modal-item"><img src="{% static 'portfolio/assets/whatsapp-icon.svg' %}"
+                                         alt="WhatsApp"
+                                         height="28px">
+                <p class="modal-item-text">WhatsApp: <a class="modal-item-link" href="https://wa.me/380665958943">+38
+                    (066) 595 89 43</a></p></div>
+            <div class="modal-item"><img src="{% static 'portfolio/assets/gmail-icon.svg' %}" alt="Gmail"
+                                         height="28px">
+                <p class="modal-item-text">Email: <a class="modal-item-link" href="mailto:yurapalamarchuk111@gmail.com">yurapalamarchuk111@gmail.com</a>
+                </p></div>
         </div>
     </div>
-    <div id="overlay"></div>
-
-    <script src="{% static 'portfolio/main.js' %}"></script>
-    </html>
-{% endspaceless %}
+</div>
+<div id="overlay"></div>
+<script src="{% static 'portfolio/js/main.js' %}"></script>
+</body>
+</html>
