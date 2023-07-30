@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.utils.html import mark_safe
 from django.contrib.auth.models import Group
+from adminsortable2.admin import SortableAdminMixin
 from .models import Project, Introduction
 
 from django import forms
@@ -24,7 +25,7 @@ class ProjectForm(forms.ModelForm):
         return preview
 
 
-class IntroductiomForm(forms.ModelForm):
+class IntroductionForm(forms.ModelForm):
     class Meta:
         fields = '__all__'
         model = Introduction
@@ -33,19 +34,23 @@ class IntroductiomForm(forms.ModelForm):
         attrs={'cols': 80, 'rows': 3}))
 
 
-class ProjectAdmin(admin.ModelAdmin):
+class ProjectAdmin(SortableAdminMixin, admin.ModelAdmin):
     form = ProjectForm
 
-    list_display = ("title", "get_preview_small")
-    readonly_fields = ('get_preview_large', )
+    list_display = ("show", "title", "get_preview_small", "order_number")
+    list_display_links = ("title",)
+    list_editable = ("show", "order_number")
+    readonly_fields = ('get_preview_large',)
     change_form_template = 'admin/portfolio/project.html'
 
     def get_preview_small(self, obj):
         return mark_safe(f"<img src={obj.preview.url} width=110px>")
+
     get_preview_small.short_description = "Preview"
 
     def get_preview_large(self, obj):
         return mark_safe(f'<img src={obj.preview.url} width=300px style="margin-bottom: 10px;">')
+
     get_preview_large.short_description = "Example"
 
     def add_view(self, request, extra_context=None):
@@ -68,11 +73,12 @@ class ProjectAdmin(admin.ModelAdmin):
 
 
 class IntroductionAdmin(admin.ModelAdmin):
-    form = IntroductiomForm
-    readonly_fields = ('get_picture', )
+    form = IntroductionForm
+    readonly_fields = ('get_picture',)
 
     def get_picture(self, obj):
         return mark_safe(f'<img src={obj.picture.url} width=300px style="margin-bottom: 10px;">')
+
     get_picture.short_description = "Preview"
 
     def add_view(self, request, extra_context=None):
@@ -106,7 +112,7 @@ class IntroductionAdmin(admin.ModelAdmin):
         if Introduction.objects.count() == 0:
             return False
         return super().has_change_permission(request, obj)
-    
+
     def has_view_permission(self, request, obj=None):
         if Introduction.objects.count() == 0:
             return False

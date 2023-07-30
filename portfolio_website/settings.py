@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'portfolio',
     'tinymce',
     'dynamic_preferences',
+    'adminsortable2',
 ]
 
 MIDDLEWARE = [

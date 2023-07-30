@@ -6,7 +6,7 @@ from django.http import Http404
 
 def index(request):
     context = {
-        'projects': Project.objects.all().order_by('-id'),
+        'projects': Project.objects.all().filter(show=True).order_by('order_number'),
         'empty_block': False,
     }
     try:
@@ -16,6 +16,7 @@ def index(request):
         pass
     if context['projects'].count() % 3 == 2:
         context['empty_block'] = True
+
     return render(request, 'portfolio/index.html', context=context)
 
 
@@ -24,6 +25,7 @@ def introduction_admin(request):
         introduction_object = Introduction.objects.get()
     except Introduction.DoesNotExist:
         return redirect(urljoin(request.get_full_path(), "add"))
+
     return redirect(urljoin(request.get_full_path(), f"{introduction_object.id}/change"))
 
 

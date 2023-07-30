@@ -5,6 +5,7 @@ from .storage import OverwriteStorage
 
 
 class Project(models.Model):
+    show = models.BooleanField(default=True)
     title = models.CharField(max_length=100, verbose_name="Title")
     description = models.TextField(max_length=1000, verbose_name="Description")
     preview = models.ImageField(
@@ -13,12 +14,20 @@ class Project(models.Model):
         blank=True, verbose_name="GitHub link (leave blank if none)")
     link = models.URLField(blank=False, verbose_name="Link to demo")
 
+    order_number = models.PositiveIntegerField(
+        default=0,
+        blank=True,
+        null=False,
+        db_index=True
+    )
+
     def __str__(self):
         return self.title
 
     class Meta:
         verbose_name = "Project"
         verbose_name_plural = "Projects"
+        ordering = ['order_number']
 
 
 class Introduction(models.Model):
