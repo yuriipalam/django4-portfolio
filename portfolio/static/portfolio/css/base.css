@@ -7,6 +7,9 @@
 
 * {
     font-family: "Montserrat", sans-serif;
+    /* remove ugly blue highlight */
+    -webkit-tap-highlight-color: transparent; /* For WebKit browsers */
+    user-select: none; /* For other browsers */
 }
 
 .container {
