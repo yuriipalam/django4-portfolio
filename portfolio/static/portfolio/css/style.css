@@ -9,27 +9,26 @@
     align-items: center;
 }
 
-.introduction__header {
+.introduction-title {
     margin-top: 25px;
     text-align: center;
 }
 
-.introduction__photo {
+.introduction-picture {
     width: 300px;
     align-self: center;
     border-radius: 50%;
     filter: drop-shadow(0px 9px 5px rgba(0, 0, 0, 0.3));
 }
 
-.introduction__text {
-    align-self: center;
+.introduction-text {
     max-width: 700px;
     margin-top: 0;
     text-align: center;
     line-height: 22px;
 }
 
-.introduction p {
+.introduction-text p {
     margin-top: 0;
 }
 
@@ -38,7 +37,7 @@
         padding-top: 75px;
     }
 
-    .introduction__photo {
+    .introduction-picture {
         width: 275px;
     }
 }
@@ -47,21 +46,22 @@
     projects block
 */
 
-.projects {
+.projects-block {
     margin-top: 40px;
 }
 
-.projects__header {
+.projects-title {
     margin-bottom: 5px;
+    font-weight: 400;
 }
 
-hr {
+.projects-block hr {
     border: 0;
     border-top: 1px solid #a5a5a5;
     margin-bottom: 20px;
 }
 
-.projects__row {
+.projects {
     display: flex;
     justify-content: space-between;
     flex-flow: wrap;
@@ -69,46 +69,59 @@ hr {
 
 .project {
     width: 31.3%;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     align-self: normal;
 }
 
-.project__image, .project__link__image {
+.project-image {
     max-width: 100%;
+    transition: transform 0.3s ease-in-out,
+    border-radius 0.3s ease-in-out,
+    filter 0.3s ease-in-out;
+    border-radius: 15px;
+    filter: drop-shadow(0 3px 4px rgba(22, 22, 22, 0.08));
 }
 
-.project__image {
+.project-image:hover {
+    transform: scale(1.02) translateY(-5px);
+    border-radius: 20px;
+    filter: drop-shadow(0 3px 8px rgba(22, 22, 22, 0.08));
+}
+
+.project-title {
+    margin-top: 2px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.project-github-link {
+    display: flex;
+}
+
+.project-github-icon {
+    margin-right: 3px;
     transition: opacity 400ms ease;
 }
 
-.project__image:hover {
-    opacity: 0.8;
-}
-
-.project__github-icon {
-    transition: opacity 400ms ease;
-}
-
-.project__github-icon:hover {
+.project-github-icon:hover {
     opacity: 0.7;
 }
 
-.project__link__title {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
+.project-link {
+    font-weight: 500;
     margin-top: 5px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     font-size: 20px;
     text-decoration: none;
-    color: #1b1b1b;
+    color: var(--blakish);
     transition: all 0.3s ease;
 }
 
-.project__link__title:hover {
+.project-link:hover {
     color: var(--blue);
 }
 
-.project__description {
+.project-desc {
     margin-top: 5px;
     font-size: 16px;
 }

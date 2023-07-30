@@ -44,6 +44,8 @@ h2 {
     justify-content: space-between;
     align-items: center;
     padding: 5px 10%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     transition: filter 700ms ease-in-out;
 }
 
@@ -98,7 +100,9 @@ h2 {
     border: 1px solid white;
     border-radius: 50px;
     cursor: pointer;
-    transition: all 0.4s ease-in-out;
+    transition: color 0.4s ease-in-out,
+    background-color 0.4s ease-in-out,
+    border 0.4s ease-in-out;
 }
 
 .nav-button:hover {
@@ -149,6 +153,7 @@ h2 {
 
     .navbar.active {
         filter: drop-shadow(-10px -5px 6px rgba(22, 22, 22, 0.8));
+
     }
 
     .hamburger {
@@ -170,7 +175,7 @@ h2 {
     .nav-items {
         z-index: 0;
         position: fixed;
-        top: 40px;
+        top: 35px;
         left: -105%;
         width: 100%;
         transition: 0.3s;

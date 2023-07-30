@@ -4,44 +4,51 @@
     <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
 {% endblock %}
 {% block content %}
-    <main>
-        <div class="container">
-            <div class="introduction">
-                <img class="introduction__photo" src="{{ intro_object.picture.url }}" alt="Photo of Yurii Palamarchuk">
-                <h1 class="introduction__header">{{ intro_object.title }}</h1>
-                <span class="introduction__text">
-                {{ intro_object.description|safe }}
+    <div class="container">
+        <header class="introduction">
+            <img class="introduction-picture" src="{{ intro_object.picture.url }}"
+                 alt="Photo of Yurii Palamarchuk in Toronto">
+            <h1 class="introduction-title">{{ intro_object.title }}</h1>
+            <span class="introduction-text">
+                {{ intro_object.description | safe }}
                 </span>
-            </div>
-
+        </header>
+        <main>
             {% if projects %}
-                <div class="projects">
-                    <h2 class="projects__header">Projects</h2>
+                <div class="projects-block">
+                    <h2 class="projects-title">Projects</h2>
                     <hr>
-                    <div class="projects__row">
+                    <div class="projects">
                         {% for project in projects %}
                             <div class="project">
-                                <a class="project__link__image" href="{{ project.link }}" target="_blank"><img
-                                        class="project__image" src="{{ project.preview.url }}"
-                                        alt="{{ project.title }}"></a>
-                                <div style="display: flex; align-items: flex-end;">{% if project.github %}
-                                    <a href="{{ project.github }}" style="display: flex;" target="_blank"><img
-                                            src="{% static 'portfolio/assets/github-icon.svg' %}" alt="Github" height="26px"
-                                            class="project__github-icon"></a>{% endif %}<a class="project__link__title"
-                                                                                           href="{{ project.link }}"
-                                                                                           target="_blank"
-                                        {% if project.github %}
-                                                                                           style="margin-left: 3px;"{% endif %}>{{ project.title }}</a>
+                                <a class="project-image-link" href="{{ project.link }}" target="_blank">
+                                    <img class="project-image" src="{{ project.preview.url }}"
+                                         alt="{{ project.title }}"/>
+                                </a>
+                                <div class="project-title">
+                                    {% if project.github %}
+                                        <a class="project-github-link" href="{{ project.github }}" target="_blank">
+                                            <img class="project-github-icon"
+                                                 src="{% static 'portfolio/assets/github-icon.svg' %}" alt="Github"
+                                                 height="26px"
+                                            />
+                                        </a>
+                                    {% endif %}
+                                    <a class="project-link" href="{{ project.link }}" target="_blank">
+                                        {{ project.title }}
+                                    </a>
                                 </div>
-                                <p class="project__description">{{ project.description }}</p>
+                                <p class="project-desc">
+                                    {{ project.description }}
+                                </p>
                             </div>
                         {% endfor %}
                         {% if empty_block %}
-                            <div class="project empty_block"></div>
+                            <div class="project project-empty-block"></div>
                         {% endif %}
                     </div>
                 </div>
             {% endif %}
-        </div>
-    </main>
+        </main>
+    </div>
 {% endblock content %}
